@@ -1,0 +1,4 @@
+If a single AZ outage occurs, the RTO would be approximately <5 minutes as the RDS database is deployed across multiple AZ's. The RDS would automatically fail over to a standy by instance. We would still alert the developer(s) that this has occured at a low level.
+If a single region outage occurs, the developer(s) would need to be notified and would then need to promote the seconday database to read/write. Which would take <5 minutes to get notified, and around 10 minutes for a developer to log in and promote the seconday database using a backup snapshot.
+
+Due to the Multi-AZ deployment of RDS our RPO is also relatively low, it would be less than <5 minutes for the single AZ outage and around 10-20 minutes depending on response time from developer(s) for the single region outage.
